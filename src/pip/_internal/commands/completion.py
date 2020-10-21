@@ -48,7 +48,7 @@ COMPLETION_SCRIPTS = {
         end
         complete -fa "(__fish_complete_pip)" -c {prog}
     """,
-    'posh': """
+    'powershell': """
         if ((Test-Path Function:\\TabExpansion) -and -not `
             (Test-Path Function:\\_pip_completeBackup)) {{
             Rename-Item Function:\\TabExpansion _pip_completeBackup
@@ -99,9 +99,9 @@ class CompletionCommand(Command):
             dest='shell',
             help='Emit completion code for fish')
         self.cmd_opts.add_option(
-            '--posh', '-p',
+            '--powershell', '-p',
             action='store_const',
-            const='posh',
+            const='powershell',
             dest='shell',
             help='Emit completion code for powershell')
 
